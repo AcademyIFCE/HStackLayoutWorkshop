@@ -11,6 +11,7 @@
 		27EDF01428FF1C8B00A09703 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF01328FF1C8B00A09703 /* ContentView.swift */; };
 		27EDF01628FF1C8D00A09703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EDF01528FF1C8D00A09703 /* Assets.xcassets */; };
 		27EDF01928FF1C8D00A09703 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EDF01828FF1C8D00A09703 /* Preview Assets.xcassets */; };
+		27EDF02028FF238E00A09703 /* MyHStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF01F28FF238E00A09703 /* MyHStackLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		27EDF01328FF1C8B00A09703 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		27EDF01528FF1C8D00A09703 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27EDF01828FF1C8D00A09703 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		27EDF01F28FF238E00A09703 /* MyHStackLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHStackLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				27EDF01128FF1C8B00A09703 /* HStackLayoutWorkshopApp.swift */,
 				27EDF01328FF1C8B00A09703 /* ContentView.swift */,
+				27EDF01F28FF238E00A09703 /* MyHStackLayout.swift */,
 				27EDF01528FF1C8D00A09703 /* Assets.xcassets */,
 				27EDF01728FF1C8D00A09703 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				27EDF01428FF1C8B00A09703 /* ContentView.swift in Sources */,
 				27EDF01228FF1C8B00A09703 /* HStackLayoutWorkshopApp.swift in Sources */,
+				27EDF02028FF238E00A09703 /* MyHStackLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
