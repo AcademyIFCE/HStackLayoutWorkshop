@@ -1,15 +1,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var proxy = ChildrenFrameProxy()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List {
+            
+            ChildrenFrameReader(layout: HStackLayout(spacing: 0), proxy: proxy) {
+                Color.red
+                    .frame(maxWidth: 100)
+                Color.green
+                    .frame(minWidth: 100)
+            }
+            .frame(width: 150, height: 100)
+            .border(.black)
+            .frame(maxWidth: .infinity)
+            
+            ForEach(proxy.ids, id: \.self) { id in
+                LabeledContent(String("\(id)"), value: proxy[id]?.width.formatted() ?? "?")
+            }
+            
         }
-        .padding()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
