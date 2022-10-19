@@ -54,6 +54,9 @@ struct ChildrenFrameReader<L: Layout, Content: View>: View {
                                     .preference(key: FramePreferenceKey.self, value: [child.id: frame])
                             }
                         }
+                        .overlay {
+                            Text(child.id.description)
+                        }
                 }
             }
             .coordinateSpace(name: "layout")
