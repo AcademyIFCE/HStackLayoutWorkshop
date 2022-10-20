@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2749448129004016004EF529 /* LayoutTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2749448029004016004EF529 /* LayoutTestView.swift */; };
+		274944892901CBEE004EF529 /* HStackLayoutWorkshopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274944882901CBEE004EF529 /* HStackLayoutWorkshopTests.swift */; };
+		274944912901CC63004EF529 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 274944902901CC63004EF529 /* SnapshotTesting */; };
 		27EDF01228FF1C8B00A09703 /* HStackLayoutWorkshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF01128FF1C8B00A09703 /* HStackLayoutWorkshopApp.swift */; };
 		27EDF01428FF1C8B00A09703 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF01328FF1C8B00A09703 /* ContentView.swift */; };
 		27EDF01628FF1C8D00A09703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EDF01528FF1C8D00A09703 /* Assets.xcassets */; };
@@ -16,8 +18,20 @@
 		27EDF02228FF29A200A09703 /* ChildrenFrameReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF02128FF29A200A09703 /* ChildrenFrameReader.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2749448A2901CBEE004EF529 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27EDF00628FF1C8B00A09703 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27EDF00D28FF1C8B00A09703;
+			remoteInfo = HStackLayoutWorkshop;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2749448029004016004EF529 /* LayoutTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestView.swift; sourceTree = "<group>"; };
+		274944862901CBEE004EF529 /* HStackLayoutWorkshopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HStackLayoutWorkshopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		274944882901CBEE004EF529 /* HStackLayoutWorkshopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackLayoutWorkshopTests.swift; sourceTree = "<group>"; };
 		27EDF00E28FF1C8B00A09703 /* HStackLayoutWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HStackLayoutWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EDF01128FF1C8B00A09703 /* HStackLayoutWorkshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackLayoutWorkshopApp.swift; sourceTree = "<group>"; };
 		27EDF01328FF1C8B00A09703 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +42,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		274944832901CBEE004EF529 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				274944912901CC63004EF529 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27EDF00B28FF1C8B00A09703 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,10 +60,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		274944872901CBEE004EF529 /* HStackLayoutWorkshopTests */ = {
+			isa = PBXGroup;
+			children = (
+				274944882901CBEE004EF529 /* HStackLayoutWorkshopTests.swift */,
+			);
+			path = HStackLayoutWorkshopTests;
+			sourceTree = "<group>";
+		};
 		27EDF00528FF1C8B00A09703 = {
 			isa = PBXGroup;
 			children = (
 				27EDF01028FF1C8B00A09703 /* HStackLayoutWorkshop */,
+				274944872901CBEE004EF529 /* HStackLayoutWorkshopTests */,
 				27EDF00F28FF1C8B00A09703 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				27EDF00E28FF1C8B00A09703 /* HStackLayoutWorkshop.app */,
+				274944862901CBEE004EF529 /* HStackLayoutWorkshopTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +111,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		274944852901CBEE004EF529 /* HStackLayoutWorkshopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2749448E2901CBEE004EF529 /* Build configuration list for PBXNativeTarget "HStackLayoutWorkshopTests" */;
+			buildPhases = (
+				274944822901CBEE004EF529 /* Sources */,
+				274944832901CBEE004EF529 /* Frameworks */,
+				274944842901CBEE004EF529 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2749448B2901CBEE004EF529 /* PBXTargetDependency */,
+			);
+			name = HStackLayoutWorkshopTests;
+			packageProductDependencies = (
+				274944902901CC63004EF529 /* SnapshotTesting */,
+			);
+			productName = HStackLayoutWorkshopTests;
+			productReference = 274944862901CBEE004EF529 /* HStackLayoutWorkshopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		27EDF00D28FF1C8B00A09703 /* HStackLayoutWorkshop */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27EDF01C28FF1C8D00A09703 /* Build configuration list for PBXNativeTarget "HStackLayoutWorkshop" */;
@@ -106,6 +159,10 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					274944852901CBEE004EF529 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 27EDF00D28FF1C8B00A09703;
+					};
 					27EDF00D28FF1C8B00A09703 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -120,16 +177,27 @@
 				Base,
 			);
 			mainGroup = 27EDF00528FF1C8B00A09703;
+			packageReferences = (
+				2749448F2901CC63004EF529 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 27EDF00F28FF1C8B00A09703 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				27EDF00D28FF1C8B00A09703 /* HStackLayoutWorkshop */,
+				274944852901CBEE004EF529 /* HStackLayoutWorkshopTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		274944842901CBEE004EF529 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27EDF00C28FF1C8B00A09703 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,6 +210,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		274944822901CBEE004EF529 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				274944892901CBEE004EF529 /* HStackLayoutWorkshopTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27EDF00A28FF1C8B00A09703 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,7 +232,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2749448B2901CBEE004EF529 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27EDF00D28FF1C8B00A09703 /* HStackLayoutWorkshop */;
+			targetProxy = 2749448A2901CBEE004EF529 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2749448C2901CBEE004EF529 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ada.ifce.HStackLayoutWorkshopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HStackLayoutWorkshop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HStackLayoutWorkshop";
+			};
+			name = Debug;
+		};
+		2749448D2901CBEE004EF529 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ada.ifce.HStackLayoutWorkshopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HStackLayoutWorkshop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HStackLayoutWorkshop";
+			};
+			name = Release;
+		};
 		27EDF01A28FF1C8D00A09703 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -332,6 +452,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2749448E2901CBEE004EF529 /* Build configuration list for PBXNativeTarget "HStackLayoutWorkshopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2749448C2901CBEE004EF529 /* Debug */,
+				2749448D2901CBEE004EF529 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		27EDF00928FF1C8B00A09703 /* Build configuration list for PBXProject "HStackLayoutWorkshop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -351,6 +480,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2749448F2901CC63004EF529 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		274944902901CC63004EF529 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2749448F2901CC63004EF529 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 27EDF00628FF1C8B00A09703 /* Project object */;
 }
