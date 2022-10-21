@@ -10,6 +10,7 @@
 		2749448129004016004EF529 /* LayoutTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2749448029004016004EF529 /* LayoutTestView.swift */; };
 		274944892901CBEE004EF529 /* HStackLayoutWorkshopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274944882901CBEE004EF529 /* HStackLayoutWorkshopTests.swift */; };
 		274944912901CC63004EF529 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 274944902901CC63004EF529 /* SnapshotTesting */; };
+		27494493290301EB004EF529 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27494492290301EB004EF529 /* Utils.swift */; };
 		27EDF01228FF1C8B00A09703 /* HStackLayoutWorkshopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF01128FF1C8B00A09703 /* HStackLayoutWorkshopApp.swift */; };
 		27EDF01428FF1C8B00A09703 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDF01328FF1C8B00A09703 /* ContentView.swift */; };
 		27EDF01628FF1C8D00A09703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EDF01528FF1C8D00A09703 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		2749448029004016004EF529 /* LayoutTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestView.swift; sourceTree = "<group>"; };
 		274944862901CBEE004EF529 /* HStackLayoutWorkshopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HStackLayoutWorkshopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		274944882901CBEE004EF529 /* HStackLayoutWorkshopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackLayoutWorkshopTests.swift; sourceTree = "<group>"; };
+		27494492290301EB004EF529 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		27EDF00E28FF1C8B00A09703 /* HStackLayoutWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HStackLayoutWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EDF01128FF1C8B00A09703 /* HStackLayoutWorkshopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackLayoutWorkshopApp.swift; sourceTree = "<group>"; };
 		27EDF01328FF1C8B00A09703 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				274944882901CBEE004EF529 /* HStackLayoutWorkshopTests.swift */,
+				27494492290301EB004EF529 /* Utils.swift */,
 			);
 			path = HStackLayoutWorkshopTests;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				274944892901CBEE004EF529 /* HStackLayoutWorkshopTests.swift in Sources */,
+				27494493290301EB004EF529 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

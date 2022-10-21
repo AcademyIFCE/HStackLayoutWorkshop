@@ -68,65 +68,9 @@ final class HStackLayoutFromScratchTests: XCTestCase {
         }
     }
     
-    func testHStackLayout(width: CGFloat = 300, height: CGFloat = 100, spacing: CGFloat?, @ViewBuilder content: () -> some View, line: UInt = #line) {
-        testHStackLayoutUsingProxy(width: width, height: height, spacing: spacing, content: content(), line: line)
-        testHStackLayoutUsingSnapshot(width: width, height: height, spacing: spacing, content: content(), line: line)
-    }
-    
-    func testHStackLayoutUsingProxy(width: CGFloat, height: CGFloat, spacing: CGFloat?, content: some View, line: UInt) {
-        
-        let ref = ChildrenFrameProxy()
-        let sut = ChildrenFrameProxy()
-        
-        render(width: width, height: height) {
-            ChildrenFrameReader(layout: HStackLayout(spacing: spacing), proxy: ref) {
-                content
-            }
-        }
-
-        render(width: width, height: height) {
-            ChildrenFrameReader(layout: MyHStackLayout(spacing: spacing), proxy: sut) {
-                content
-            }
-        }
-
-        for id in ref.ids {
-            assert(id: id, sut: sut, ref: ref, keyPath: \.origin.x, name: "origin.x", line: line)
-            assert(id: id, sut: sut, ref: ref, keyPath: \.origin.y, name: "origin.y", line: line)
-            assert(id: id, sut: sut, ref: ref, keyPath: \.size.width, name: "size.width", line: line)
-            assert(id: id, sut: sut, ref: ref, keyPath: \.size.height, name: "size.height", line: line)
-        }
-        
-    }
-    
-    func testHStackLayoutUsingSnapshot(width: CGFloat, height: CGFloat, spacing: CGFloat?, content: some View, line: UInt) {
-
-        let ref = makeController(width: width, height: height, for: content, layout: HStackLayout(spacing: spacing))
-        let sut = makeController(width: width, height: height, for: content, layout: MyHStackLayout(spacing: spacing))
-        
-        let _ = verifySnapshot(matching: ref.view, as: .image, named: "content", record: true)
-        
-        assertSnapshot(matching: sut.view, as: .image, named: "content", line: line)
-        
-    }
-    
-    func assert(id: AnyHashable, sut: ChildrenFrameProxy, ref: ChildrenFrameProxy, keyPath: KeyPath<CGRect, CGFloat>, name: String, line: UInt) {
-        let sut = sut[id]![keyPath: keyPath]
-        let ref = ref[id]![keyPath: keyPath]
-        let message = "\n \(id) : \(name) - diff: \(sut - ref)"
-        XCTAssertEqual(sut, ref, message, line: line)
-    }
-    
-    func makeController(width: CGFloat, height: CGFloat, for content: some View, layout: some Layout) -> UIViewController {
-        UIHostingController(rootView: layout({ content }).frame(width: width, height: height))
-    }
-    
-    func render(width: CGFloat, height: CGFloat, @ViewBuilder content: () -> some View) {
-        let controller = UIHostingController(rootView: content().frame(width: width, height: height))
-        let window = UIWindow(frame: .zero)
-        window.rootViewController = controller
-        window.makeKeyAndVisible()
-        window.layoutIfNeeded()
+    func testHStackLayout(width: CGFloat = 300, height: CGFloat = 100, spacing: CGFloat?, @ViewBuilder content: () -> some View, file: StaticString = #file, line: UInt = #line) {
+        testHStackLayoutUsingProxy(width: width, height: height, spacing: spacing, content: content(), file: file, line: line)
+        testHStackLayoutUsingSnapshot(width: width, height: height, spacing: spacing, content: content(), file: file, line: line)
     }
     
 }
