@@ -2,6 +2,10 @@ import SwiftUI
 
 struct LayoutTestView<Content: View>: View {
     
+    let width: CGFloat
+    let height: CGFloat
+    var spacing: CGFloat? = nil
+    
     @StateObject private var ref = ChildrenFrameProxy()
     @StateObject private var sut = ChildrenFrameProxy()
     
@@ -10,10 +14,10 @@ struct LayoutTestView<Content: View>: View {
     var body: some View {
         List {
             Section("HStackLayout") {
-                build(layout: HStackLayout(spacing: 0), proxy: ref)
+                build(layout: HStackLayout(spacing: spacing), proxy: ref)
             }
             Section("MyHStackLayout") {
-                build(layout: MyHStackLayout(spacing: 0), proxy: sut)
+                build(layout: MyHStackLayout(spacing: spacing), proxy: sut)
             }
         }
     }
@@ -21,7 +25,7 @@ struct LayoutTestView<Content: View>: View {
     @ViewBuilder
     func build(layout: some Layout, proxy: ChildrenFrameProxy) -> some View {
         ChildrenFrameReader(layout: layout, proxy: proxy) { content }
-            .frame(width: 150, height: 100)
+            .frame(width: width, height: height)
             .border(.foreground)
             .padding()
             .frame(maxWidth: .infinity)
@@ -44,10 +48,12 @@ struct LayoutTestView<Content: View>: View {
 struct LayoutTestView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LayoutTestView {
-                Color.blue
-                Color.yellow
+            LayoutTestView(width: 150, height: 100, spacing: 0) {
+                Color.red
+                    .frame(maxWidth: 20)
+                Color.green
                     .frame(width: 100)
+                Color.blue
             }
         }
     }
