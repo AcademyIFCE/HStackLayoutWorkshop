@@ -12,16 +12,20 @@ struct MyHStackLayout: Layout {
     
     func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout Cache) -> CGSize {
         
-        let proposedHeight = proposal.replacingUnspecifiedDimensions().height
-        let proposedWidth = proposal.replacingUnspecifiedDimensions().width/CGFloat(subviews.count)
-        
-        let proposedSize = ProposedViewSize(width: proposedWidth, height: proposedHeight)
-        
+        let fullWidth = proposal.replacingUnspecifiedDimensions().width
+        let fullHeight = proposal.replacingUnspecifiedDimensions().height
+   
+        let availableWidthToPropose = fullWidth
+        let availableHeightToPropose = fullHeight
+                    
         var sizes: [CGSize] = []
         
         for subview in subviews {
-            let size = subview.sizeThatFits(proposedSize)
-            sizes.append(size)
+            let subviewProposedWidth = availableWidthToPropose/CGFloat(subviews.count)
+            let subviewProposedHeight = availableHeightToPropose
+            let subviewProposal = ProposedViewSize(width: subviewProposedWidth, height: subviewProposedHeight)
+            let subviewSize = subview.sizeThatFits(subviewProposal)
+            sizes.append(subviewSize)
         }
         
         let widthThatFits = sizes.reduce(0) { $0 + $1.width }
@@ -33,17 +37,21 @@ struct MyHStackLayout: Layout {
     
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout Cache) {
         
+        let fullWidth = proposal.replacingUnspecifiedDimensions().width
+        let fullHeight = proposal.replacingUnspecifiedDimensions().height
+   
+        let availableWidthToPropose = fullWidth
+        let availableHeightToPropose = fullHeight
+        
         var position = CGPoint(x: bounds.minX, y: bounds.midY)
-        
-        let proposedHeight = proposal.replacingUnspecifiedDimensions().height
-        let proposedWidth = proposal.replacingUnspecifiedDimensions().width/CGFloat(subviews.count)
-        
-        let proposedSize = ProposedViewSize(width: proposedWidth, height: proposedHeight)
-        
+
         for subview in subviews {
-            let size = subview.sizeThatFits(proposedSize)
-            subview.place(at: position, anchor: .leading, proposal: proposedSize)
-            position.x += size.width
+            let subviewProposedWidth = availableWidthToPropose/CGFloat(subviews.count)
+            let subviewProposedHeight = availableHeightToPropose
+            let subviewProposal = ProposedViewSize(width: subviewProposedWidth, height: subviewProposedHeight)
+            let subviewSize = subview.sizeThatFits(subviewProposal)
+            subview.place(at: position, anchor: .leading, proposal: subviewProposal)
+            position.x += subviewSize.width
         }
         
     }
