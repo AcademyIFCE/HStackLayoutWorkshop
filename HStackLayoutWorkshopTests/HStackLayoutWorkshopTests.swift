@@ -68,9 +68,9 @@ final class HStackLayoutFromScratchTests: XCTestCase {
         }
     }
     
-    func testHStackLayout(width: CGFloat = 300, height: CGFloat = 100, spacing: CGFloat?, @ViewBuilder content: () -> some View, file: StaticString = #file, line: UInt = #line) {
+    func testHStackLayout(width: CGFloat = 300, height: CGFloat = 100, spacing: CGFloat?, @ViewBuilder content: () -> some View, file: StaticString = #file, line: UInt = #line, function: String = #function) {
         testHStackLayoutUsingProxy(width: width, height: height, spacing: spacing, content: content(), file: file, line: line)
-        testHStackLayoutUsingSnapshot(width: width, height: height, spacing: spacing, content: content(), file: file, line: line)
+        testHStackLayoutUsingSnapshot(width: width, height: height, spacing: spacing, content: content(), file: file, line: line, function: function)
     }
     
 }

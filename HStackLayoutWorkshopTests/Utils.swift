@@ -48,14 +48,14 @@ func assert(id: AnyHashable, sut: ChildrenFrameProxy, ref: ChildrenFrameProxy, k
 
 // MARK: Snapshot
 
-func testHStackLayoutUsingSnapshot(width: CGFloat, height: CGFloat, spacing: CGFloat?, content: some View, file: StaticString, line: UInt) {
+func testHStackLayoutUsingSnapshot(width: CGFloat, height: CGFloat, spacing: CGFloat?, content: some View, file: StaticString, line: UInt, function: String = #function) {
 
     let ref = makeController(width: width, height: height, for: content, layout: HStackLayout(spacing: spacing))
     let sut = makeController(width: width, height: height, for: content, layout: MyHStackLayout(spacing: spacing))
     
-    let _ = verifySnapshot(matching: ref.view, as: .image, named: "content", record: true)
-    
-    assertSnapshot(matching: sut.view, as: .image, named: "content", line: line)
+    let _ = verifySnapshot(matching: ref.view, as: .image, named: "content", record: true, file: file, testName: function, line: line)
+
+    assertSnapshot(matching: sut.view, as: .image, named: "content", file: file, testName: function, line: line)
     
 }
 
