@@ -43,7 +43,7 @@ func assert(id: AnyHashable, sut: ChildrenFrameProxy, ref: ChildrenFrameProxy, k
     let sut = sut[id]![keyPath: keyPath]
     let ref = ref[id]![keyPath: keyPath]
     let message = "\n \(id) : \(name) - diff: \(sut - ref)"
-    XCTAssertEqual(sut, ref, message, file: file, line: line)
+    XCTAssertEqual(sut, ref, accuracy: 0.01, message, file: file, line: line)
 }
 
 // MARK: Snapshot
