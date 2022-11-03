@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27232E712913E7F300CE8818 /* FloatingPoint+AlmostEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27232E702913E7F200CE8818 /* FloatingPoint+AlmostEqual.swift */; };
+		27232E732914053400CE8818 /* FrameProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27232E722914053400CE8818 /* FrameProperty.swift */; };
 		2749448129004016004EF529 /* LayoutTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2749448029004016004EF529 /* LayoutTestView.swift */; };
 		274944892901CBEE004EF529 /* HStackLayoutWorkshopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274944882901CBEE004EF529 /* HStackLayoutWorkshopTests.swift */; };
 		274944912901CC63004EF529 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 274944902901CC63004EF529 /* SnapshotTesting */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27232E702913E7F200CE8818 /* FloatingPoint+AlmostEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+AlmostEqual.swift"; sourceTree = "<group>"; };
+		27232E722914053400CE8818 /* FrameProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameProperty.swift; sourceTree = "<group>"; };
 		2749448029004016004EF529 /* LayoutTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestView.swift; sourceTree = "<group>"; };
 		274944862901CBEE004EF529 /* HStackLayoutWorkshopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HStackLayoutWorkshopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		274944882901CBEE004EF529 /* HStackLayoutWorkshopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackLayoutWorkshopTests.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				27EDF02128FF29A200A09703 /* ChildrenFrameReader.swift */,
 				2749448029004016004EF529 /* LayoutTestView.swift */,
 				27EDF01F28FF238E00A09703 /* MyHStackLayout.swift */,
+				27232E722914053400CE8818 /* FrameProperty.swift */,
+				27232E702913E7F200CE8818 /* FloatingPoint+AlmostEqual.swift */,
 				27EDF01528FF1C8D00A09703 /* Assets.xcassets */,
 				27EDF01728FF1C8D00A09703 /* Preview Content */,
 			);
@@ -227,6 +233,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EDF01428FF1C8B00A09703 /* ContentView.swift in Sources */,
+				27232E712913E7F300CE8818 /* FloatingPoint+AlmostEqual.swift in Sources */,
+				27232E732914053400CE8818 /* FrameProperty.swift in Sources */,
 				27EDF01228FF1C8B00A09703 /* HStackLayoutWorkshopApp.swift in Sources */,
 				27EDF02028FF238E00A09703 /* MyHStackLayout.swift in Sources */,
 				27EDF02228FF29A200A09703 /* ChildrenFrameReader.swift in Sources */,

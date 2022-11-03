@@ -11,6 +11,11 @@ struct LayoutTestView<Content: View>: View {
     
     @ViewBuilder var content: Content
     
+    let propertiesToShowValue = [
+        FrameProperty(id: "x", keyPath: \.origin.x),
+        FrameProperty(id: "width", keyPath: \.width),
+    ]
+    
     var body: some View {
         List {
             Section("HStackLayout") {
@@ -29,18 +34,44 @@ struct LayoutTestView<Content: View>: View {
             .border(.foreground)
             .padding()
             .frame(maxWidth: .infinity)
-        ForEach(proxy.ids, id: \.self) { id in
-            LabeledContent(id.description) {
-                Text(proxy[id]!.width.formatted())
-                if proxy === sut {
-                    let isCorrect = (proxy[id]!.width == ref[id]!.width)
-                    Image(systemName: isCorrect ? "checkmark" : "xmark")
-                        .foregroundColor(isCorrect ? .green : .red)
-                        .symbolVariant(.square.fill)
-                        .fontWeight(.medium)
+        Grid(alignment: .leading) {
+            GridRow() {
+                Text("ID")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                ForEach(propertiesToShowValue) { property in
+                    Text(property.id)
+                        .textCase(.uppercase)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+            }
+            .bold()
+            ForEach(proxy.ids, id: \.self) { id in
+                GridRow {
+                    Text(verbatim: id.description)
+                    ForEach(propertiesToShowValue) { property in
+                        let keyPath = property.keyPath
+                        HStack {
+                            Text(proxy[id]![keyPath: keyPath], format: .number.precision(.fractionLength(1)))
+                            Spacer()
+                            if proxy === sut {
+                                let isCorrect = (sut[id]![keyPath: keyPath] == ref[id]![keyPath: keyPath])
+                                makeAssertIcon(for: keyPath, isCorrect: isCorrect)
+                                    .padding(.trailing)
+                            }
+                        }
+                    }
                 }
             }
         }
+        
+    }
+    
+    @ViewBuilder
+    func makeAssertIcon(for keyPath: KeyPath<CGRect, CGFloat>, isCorrect: Bool) -> some View {
+        Image(systemName: isCorrect ? "checkmark" : "xmark")
+            .foregroundColor(isCorrect ? .green : .red)
+            .symbolVariant(.square.fill)
+            .fontWeight(.medium)
     }
     
 }
