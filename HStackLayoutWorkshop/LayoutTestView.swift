@@ -54,7 +54,7 @@ struct LayoutTestView<Content: View>: View {
                             Text(proxy[id]![keyPath: keyPath], format: .number.precision(.fractionLength(1)))
                             Spacer()
                             if proxy === sut {
-                                let isCorrect = (sut[id]![keyPath: keyPath] == ref[id]![keyPath: keyPath])
+                                let isCorrect = (sut[id]![keyPath: keyPath].isAlmostEqual(to: ref[id]![keyPath: keyPath]))
                                 makeAssertIcon(for: keyPath, isCorrect: isCorrect)
                                     .padding(.trailing)
                             }
@@ -78,12 +78,10 @@ struct LayoutTestView<Content: View>: View {
 
 struct LayoutTestView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            LayoutTestView(width: 150, height: 100, spacing: 10) {
-                Color.red
-                Color.green
-                Color.blue
-            }
+        LayoutTestView(width: 150, height: 100, spacing: 10) {
+            Color.red
+            Color.green
+            Color.blue
         }
     }
 }
