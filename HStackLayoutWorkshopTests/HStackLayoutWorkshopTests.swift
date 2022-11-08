@@ -33,15 +33,6 @@ final class HStackLayoutFromScratchTests: XCTestCase {
         }
     }
     
-    func testHStackWhereChildrenHaveFlexibleConstrainedFrames() {
-        testHStackLayout(width: 150, spacing: 0) {
-            Color.red
-                .frame(maxWidth: 100)
-            Color.green
-                .frame(minWidth: 100)
-        }
-    }
-    
     func testHStackWhereFirstChildHasFixedWidth() {
         testHStackLayout(width: 150, spacing: 0) {
             Color.red
