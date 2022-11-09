@@ -79,9 +79,9 @@ struct LayoutTestView<Content: View>: View {
 struct LayoutTestView_Previews: PreviewProvider {
     static var previews: some View {
         LayoutTestView(width: 150, height: 100, spacing: 10) {
-            Color.red
-            Color.green
+            Color.yellow
             Color.blue
+            Color.pink
         }
     }
 }

@@ -3,7 +3,11 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        Text("HStackLayout Workshop")
+        LayoutTestView(width: 150, height: 100, spacing: 10) {
+            Color.yellow
+            Color.blue
+            Color.pink
+        }
     }
     
 }
