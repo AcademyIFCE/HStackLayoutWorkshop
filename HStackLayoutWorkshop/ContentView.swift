@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        LayoutTestView(width: 150, height: 100, spacing: 10) {
+        LayoutTestView(width: 150, height: 100, spacing: 0) {
             Color.yellow
             Color.blue
             Color.pink
