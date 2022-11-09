@@ -2,7 +2,9 @@ import SwiftUI
 
 struct MyHStackLayout: Layout {
     
-    struct Cache { }
+    struct Cache {
+        var proposals: [Int: ProposedViewSize] = [:]
+    }
 
     var spacing: CGFloat? = nil
 
@@ -20,11 +22,12 @@ struct MyHStackLayout: Layout {
                     
         var sizes: [CGSize] = []
         
-        for subview in subviews {
+        for (index, subview) in subviews.enumerated() {
             let subviewProposedWidth = availableWidthToPropose/CGFloat(subviews.count)
             let subviewProposedHeight = availableHeightToPropose
             let subviewProposal = ProposedViewSize(width: subviewProposedWidth, height: subviewProposedHeight)
             let subviewSize = subview.sizeThatFits(subviewProposal)
+            cache.proposals[index] = subviewProposal
             sizes.append(subviewSize)
         }
         
@@ -37,18 +40,10 @@ struct MyHStackLayout: Layout {
     
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout Cache) {
         
-        let fullWidth = proposal.replacingUnspecifiedDimensions().width
-        let fullHeight = proposal.replacingUnspecifiedDimensions().height
-   
-        let availableWidthToPropose = fullWidth
-        let availableHeightToPropose = fullHeight
-        
         var position = CGPoint(x: bounds.minX, y: bounds.midY)
 
-        for subview in subviews {
-            let subviewProposedWidth = availableWidthToPropose/CGFloat(subviews.count)
-            let subviewProposedHeight = availableHeightToPropose
-            let subviewProposal = ProposedViewSize(width: subviewProposedWidth, height: subviewProposedHeight)
+        for (index, subview) in subviews.enumerated() {
+            let subviewProposal = cache.proposals[index]!
             let subviewSize = subview.sizeThatFits(subviewProposal)
             subview.place(at: position, anchor: .leading, proposal: subviewProposal)
             position.x += subviewSize.width
