@@ -32,7 +32,9 @@ struct MyHStackLayout: Layout {
                     
         var sizes: [CGSize] = []
         
-        for (index, subview) in subviews.enumerated() {
+        let indexedSubviews = subviews.enumerated().map({ (index: $0.offset, subview: $0.element) })
+        
+        for (index, subview) in indexedSubviews {
             let subviewProposedWidth = availableWidthToPropose/CGFloat(subviews.count)
             let subviewProposedHeight = availableHeightToPropose
             let subviewProposal = ProposedViewSize(width: subviewProposedWidth, height: subviewProposedHeight)
