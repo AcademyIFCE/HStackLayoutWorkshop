@@ -1,5 +1,15 @@
 import SwiftUI
 
+extension LayoutSubview {
+    
+    var flexibility: (width: CGFloat, height: CGFloat) {
+        let minSize = dimensions(in: .zero)
+        let maxSize = dimensions(in: .infinity)
+        return (maxSize.width - minSize.width, maxSize.height - minSize.height)
+    }
+    
+}
+
 struct MyHStackLayout: Layout {
     
     struct Cache {
