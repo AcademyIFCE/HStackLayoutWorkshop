@@ -10,6 +10,12 @@ extension LayoutSubview {
     
 }
 
+// MARK: Steps to complete implementation
+
+// 1 - Take spacing between subviews into account
+// 2 - Propose to each subview the remaining available space divided by the number of remaining subviews to propose
+// 3 - Sort the subviews by flexibility (lower to higher) before propose sizes
+
 struct MyHStackLayout: Layout {
     
     struct Cache {
